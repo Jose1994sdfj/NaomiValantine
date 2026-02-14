@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Naomi 💛</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#FFFBF0;--yellow:#FFD93D;--warm:#FFBE0B;
+  --red:#FF4D6D;--pink:#FF8FA3;--soft:#FFF0F3;
+  --black:#1A1A1A;--sky:#C9EDFF;--white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:linear-gradient(160deg,#FFECD2 0%,#FFD6E0 40%,#FFF8DC 100%);
+  min-height:100vh;font-family:'Nunito',sans-serif;overflow-x:hidden;
+}
+/* FLOATIES */
+.bg-layer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.floatie{position:absolute;animation:rise linear infinite;opacity:0;font-size:1.4rem;}
+@keyframes rise{
+  0%{transform:translateY(105vh) rotate(0deg);opacity:0;}
+  10%{opacity:.45;}90%{opacity:.3;}
+  100%{transform:translateY(-8vh) rotate(400deg);opacity:0;}
+}
+/* WRAPPER */
+.wrap{position:relative;z-index:1;max-width:660px;margin:0 auto;padding:20px 14px 70px;}
+/* BADGE */
+.badge{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--red);color:#fff;border-radius:50px;padding:9px 28px;
+  font-size:.85rem;font-weight:900;letter-spacing:3px;text-transform:uppercase;
+  margin:0 auto 26px;width:fit-content;
+  box-shadow:0 6px 24px rgba(255,77,109,.45);
+  animation:popIn .7s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes popIn{0%{transform:scale(0) rotate(-10deg);opacity:0;}100%{transform:scale(1) rotate(0);opacity:1;}}
+/* CARD */
+.card{
+  background:#fff;border-radius:32px;padding:38px 32px 44px;
+  box-shadow:0 24px 70px rgba(255,77,109,.14),0 6px 18px rgba(0,0,0,.06);
+  position:relative;overflow:hidden;
+}
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:7px;
+  background:linear-gradient(90deg,var(--yellow),var(--red),var(--pink),var(--yellow),var(--warm));
+  background-size:300% 100%;animation:rainbow 4s linear infinite;
+}
+@keyframes rainbow{0%{background-position:0%}100%{background-position:300%}}
+
+/* ─── SNOOPY SCENE ─── */
+.snoopy-scene{text-align:center;padding:40px 0 10px;margin-bottom:12px;}
+.doghouse-wrap{display:inline-block;position:relative;}
+/* Roof */
+.dh-roof{
+  width:0;height:0;
+  border-left:90px solid transparent;
+  border-right:90px solid transparent;
+  border-bottom:58px solid #CC2200;
+  margin:0 auto;position:relative;z-index:2;
+}
+.dh-roof::after{
+  content:'';position:absolute;
+  width:24px;height:24px;background:#FFD93D;
+  border-radius:50%;border:2.5px solid #000;
+  top:-2px;left:50%;transform:translate(-50%,-50%);
+}
+/* Body */
+.dh-body{
+  width:164px;background:#8B4513;
+  border:3px solid #000;border-radius:0 0 12px 12px;
+  padding:12px 10px 10px;margin:0 auto;
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;
+}
+.dh-door{
+  width:52px;height:54px;background:#5C2E00;
+  border:2.5px solid #000;border-radius:28px 28px 6px 6px;
+  position:relative;
+}
+.dh-door::after{content:'';position:absolute;width:9px;height:9px;background:#FFD93D;border-radius:50%;right:8px;top:50%;transform:translateY(-50%);border:1.5px solid #000;}
+/* Snoopy emoji on top */
+.snoopy-on-top{
+  position:absolute;top:-55px;left:50%;transform:translateX(-50%);
+  font-size:5rem;z-index:10;line-height:1;
+  animation:snFloat 3s ease-in-out infinite;
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,.15));
+}
+@keyframes snFloat{
+  0%,100%{transform:translateX(-50%) translateY(0) rotate(-3deg);}
+  50%{transform:translateX(-50%) translateY(-10px) rotate(3deg);}
+}
+/* Thought bubble */
+.thought{
+  position:absolute;top:-82px;right:-40px;
+  background:#fff;border:3px solid #000;
+  border-radius:16px;padding:8px 13px;
+  font-size:1.15rem;font-weight:900;color:#333;
+  box-shadow:3px 3px 0 #000;
+  animation:twobble 2.5s ease-in-out infinite;
+  z-index:20;white-space:nowrap;
+}
+.thought::before{content:'';position:absolute;width:10px;height:10px;background:#fff;border:3px solid #000;border-radius:50%;bottom:-16px;left:14px;}
+.thought::after{content:'';position:absolute;width:6px;height:6px;background:#fff;border:2px solid #000;border-radius:50%;bottom:-26px;left:22px;}
+@keyframes twobble{0%,100%{transform:rotate(-3deg);}50%{transform:rotate(3deg) scale(1.04);}}
+/* Woodstocks */
+.woodstocks{display:flex;justify-content:center;align-items:flex-end;gap:18px;margin-top:20px;}
+.ws{font-size:2.1rem;animation:wsdance .5s ease-in-out infinite alternate;filter:drop-shadow(0 4px 6px rgba(0,0,0,.1));}
+.ws:nth-child(1){animation-delay:0s;}
+.ws:nth-child(2){animation-delay:.15s;}
+.ws:nth-child(3){animation-delay:.3s;}
+.ws:nth-child(4){animation-delay:.45s;}
+@keyframes wsdance{0%{transform:rotate(-14deg) translateY(0);}100%{transform:rotate(14deg) translateY(-9px);}}
+.ws-caption{font-size:.8rem;color:#bbb;font-style:italic;font-weight:700;text-align:center;margin-top:6px;}
+
+/* ─── NAME ─── */
+.name-block{text-align:center;margin:28px 0 8px;animation:fadeUp .9s ease-out .3s both;}
+.name-block .para{font-family:'Dancing Script',cursive;font-size:1.7rem;color:#888;display:block;margin-bottom:4px;}
+.name-block .nombre{font-family:'Pacifico',cursive;font-size:2.8rem;color:var(--black);text-shadow:4px 4px 0 var(--yellow);line-height:1.15;display:block;}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(28px);}100%{opacity:1;transform:translateY(0);}}
+/* HEARTS ROW */
+.hrow{display:flex;justify-content:center;gap:8px;margin:16px 0;flex-wrap:wrap;}
+.hrow span{font-size:1.9rem;animation:hbeat 1.4s ease-in-out infinite;}
+.hrow span:nth-child(2){animation-delay:.2s;}.hrow span:nth-child(3){animation-delay:.4s;}
+.hrow span:nth-child(4){animation-delay:.6s;}.hrow span:nth-child(5){animation-delay:.8s;}
+@keyframes hbeat{0%,100%{transform:scale(1);}50%{transform:scale(1.3);}}
+/* MSG BOX */
+.msg-box{
+  background:linear-gradient(135deg,#FFFDE7,#FFF3E0);
+  border:3px solid var(--yellow);border-radius:22px;
+  padding:24px 28px;text-align:center;margin:20px 0;
+  animation:fadeUp .9s ease-out .5s both;
+}
+.msg-box p{font-size:1.08rem;color:#333;line-height:1.85;font-weight:600;}
+.msg-box .hl{color:var(--red);font-weight:900;font-size:1.12rem;}
+/* DIVIDER */
+.divider{display:flex;align-items:center;gap:12px;margin:28px 0;color:#ccc;}
+.divider::before,.divider::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,transparent,#FFD93D,transparent);}
+.divider span{font-size:1.5rem;animation:spin 4s linear infinite;}
+@keyframes spin{0%{transform:rotate(0);}100%{transform:rotate(360deg);}}
+
+/* ─── MAGIC BALL ─── */
+.surprise-sec{margin:8px 0 28px;text-align:center;}
+.surprise-sec h3{
+  font-family:'Pacifico',cursive;font-size:1.25rem;color:var(--black);
+  background:var(--sky);display:inline-block;
+  padding:10px 28px;border-radius:50px;
+  border:2.5px solid var(--black);box-shadow:3px 3px 0 var(--black);margin-bottom:20px;
+}
+.ball-wrap{position:relative;width:200px;height:200px;margin:0 auto 12px;}
+.ball{
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle at 33% 28%,#6ab4ff,#0033cc 50%,#001166 100%);
+  border:4px solid var(--black);
+  box-shadow:0 12px 40px rgba(0,50,200,.4),inset 0 -8px 20px rgba(0,0,0,.3),inset 0 8px 20px rgba(255,255,255,.15);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;
+}
+.ball::before{content:'';position:absolute;top:18px;left:32px;width:50px;height:28px;background:rgba(255,255,255,.18);border-radius:50%;transform:rotate(-30deg);}
+.ball:hover{transform:scale(1.04);box-shadow:0 16px 50px rgba(0,50,200,.5);}
+.ball:active{transform:scale(.97);}
+.ball-win{width:90px;height:90px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#1a3a8c,#000066 60%,#000033);border:3px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;}
+.ball-sym{font-size:2.2rem;color:rgba(100,200,255,.9);text-shadow:0 0 12px rgba(100,200,255,.8);user-select:none;line-height:1;}
+.ball-ans{font-size:.65rem;color:rgba(150,220,255,.95);text-align:center;padding:2px 4px;font-weight:900;line-height:1.25;text-shadow:0 0 8px rgba(100,200,255,.6);opacity:0;transition:opacity .5s;display:none;margin-top:3px;}
+.ball-ans.show{display:block;opacity:1;}
+@keyframes shake{0%,100%{transform:rotate(0);}15%{transform:rotate(-8deg);}30%{transform:rotate(8deg);}45%{transform:rotate(-6deg);}60%{transform:rotate(6deg);}75%{transform:rotate(-3deg);}90%{transform:rotate(3deg);}}
+.ball.shaking{animation:shake .6s ease-in-out;}
+.ball-hint{font-size:.84rem;color:#999;font-style:italic;font-weight:700;margin-top:6px;}
+.ball-qmsg{font-size:.9rem;color:#888;font-weight:700;font-style:italic;min-height:22px;margin-top:6px;}
+
+/* ─── MESSAGES GRID ─── */
+.reveal-sec{margin:0 0 28px;}
+.reveal-sec h3{font-family:'Pacifico',cursive;font-size:1.2rem;color:var(--black);background:var(--yellow);display:block;padding:10px 20px;border-radius:50px;border:2.5px solid var(--black);box-shadow:3px 3px 0 var(--black);text-align:center;margin-bottom:18px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mcard{border:3px solid var(--black);border-radius:20px;padding:20px 14px;text-align:center;cursor:pointer;box-shadow:4px 4px 0 var(--black);min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .15s,box-shadow .15s;overflow:hidden;}
+.mcard:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--black);}
+.mcard:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--black);}
+.mcard.c1{background:#FFF0F3;}.mcard.c2{background:#FFFDE7;}.mcard.c3{background:#E8F5E9;}.mcard.c4{background:#E3F2FD;}
+.mcard .front{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.mcard .ico{font-size:2.2rem;animation:ibounce 2s ease-in-out infinite;}
+@keyframes ibounce{0%,100%{transform:scale(1);}50%{transform:scale(1.18);}}
+.mcard .hint{font-size:.82rem;color:#999;font-weight:700;font-style:italic;}
+.mcard .back{display:none;font-size:.88rem;color:#333;font-weight:700;line-height:1.55;}
+.mcard.open .front{display:none;}.mcard.open .back{display:block;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);}
+.mcard.open{background:linear-gradient(135deg,#FFF0F3,#FFE5EC)!important;border-color:var(--red);box-shadow:4px 4px 0 var(--red);}
+.tap-note{text-align:center;font-size:.78rem;color:#bbb;font-style:italic;margin-top:8px;}
+.btn-reveal{display:block;margin:14px auto 0;background:var(--yellow);color:var(--black);border:3px solid var(--black);border-radius:50px;padding:13px 32px;font-size:.95rem;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:4px 4px 0 var(--black);transition:all .15s;letter-spacing:.3px;}
+.btn-reveal:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--black);}
+.btn-reveal:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--black);}
+.btn-reveal:disabled{opacity:.6;cursor:default;transform:none;box-shadow:4px 4px 0 var(--black);}
+
+/* ─── FINAL ─── */
+.final{background:linear-gradient(135deg,var(--red),var(--pink));border-radius:26px;padding:32px 26px;color:#fff;text-align:center;margin:26px 0 10px;position:relative;overflow:hidden;animation:fadeUp 1s ease-out .8s both;}
+.final::before{content:'🎀';position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:2rem;}
+.final h2{font-family:'Pacifico',cursive;font-size:1.65rem;margin-bottom:14px;text-shadow:2px 2px 0 rgba(0,0,0,.2);}
+.final p{font-size:1rem;font-weight:600;line-height:1.8;opacity:.96;}
+
+/* ─── SIGNATURE ─── */
+.sig{text-align:center;margin-top:30px;padding:22px 20px;background:rgba(255,255,255,.65);border-radius:20px;border:2px dashed var(--yellow);}
+.sig .label{font-size:.82rem;color:#bbb;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.sig .name{font-family:'Dancing Script',cursive;font-size:2.3rem;color:var(--red);display:block;line-height:1.2;}
+.sig .sub{font-size:.9rem;color:#888;font-weight:700;font-style:italic;margin-top:5px;}
+.sig .heart-sig{font-size:1.8rem;display:block;margin-top:10px;animation:hbeat 1.2s ease-in-out infinite;}
+
+/* ─── CONFETTI ─── */
+.conf{position:fixed;border-radius:2px;top:-10px;pointer-events:none;z-index:999;animation:fall linear forwards;}
+@keyframes fall{0%{transform:translateY(0) rotate(0);opacity:1;}100%{transform:translateY(105vh) rotate(720deg);opacity:0;}}
+
+@media(max-width:480px){
+  .nombre{font-size:2.1rem!important;}
+  .grid{gap:9px;}
+  .card{padding:28px 14px 34px;}
+  .ball,.ball-wrap{width:170px;height:170px;}
+  .ball-win{width:76px;height:76px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-layer" id="bg"></div>
+
+<div class="wrap">
+  <div class="badge">💛 14 de Febrero · Día del Amor 💛</div>
+
+  <div class="card">
+
+    <!-- SNOOPY SCENE -->
+    <div class="snoopy-scene">
+      <div class="doghouse-wrap">
+        <div class="thought">🤍 ¡Naomi! ❤️💛</div>
+        <div class="snoopy-on-top">🐶</div>
+        <div class="dh-roof"></div>
+        <div class="dh-body"><div class="dh-door"></div></div>
+      </div>
+      <div class="woodstocks">
+        <span class="ws">🐤</span>
+        <span class="ws">🐤</span>
+        <span class="ws">🐤</span>
+        <span class="ws">🐤</span>
+      </div>
+      <div class="ws-caption">♫ ¡Todos bailan para ti, Naomi! ♫</div>
+    </div>
+
+    <!-- NAME -->
+    <div class="name-block">
+      <span class="para">Esta tarjeta es para...</span>
+      <span class="nombre">Naomi Garnica</span>
+    </div>
+
+    <!-- HEARTS -->
+    <div class="hrow">
+      <span>🤍</span><span>💛</span><span>❤️</span><span>💛</span><span>🤍</span>
+    </div>
+
+    <!-- MAIN MESSAGE -->
+    <div class="msg-box">
+      <p>
+        Hay personas que llegan y todo cambia.<br>
+        Personas que con solo existir hacen<br>
+        que el mundo sea más bonito y más cálido.<br><br>
+        Tú eres una de esas personas, <span class="hl">Naomi</span>. 🌸<br><br>
+        Hoy, el 14 de Febrero, es el día perfecto<br>
+        para que sepas lo increíblemente especial que eres. 💛
+      </p>
+    </div>
+
+    <div class="divider"><span>🌸</span></div>
+
+    <!-- ══ SURPRISE: BOLA MÁGICA ══ -->
+    <div class="surprise-sec">
+      <h3>🔮 La esfera de Naomi 🔮</h3>
+      <div class="ball-wrap">
+        <div class="ball" id="oball" onclick="askOracle()">
+          <div class="ball-win">
+            <div class="ball-sym" id="osym">🔮</div>
+            <div class="ball-ans" id="oans"></div>
+          </div>
+        </div>
+      </div>
+      <p class="ball-hint" id="bhint">✨ Toca la esfera y descubre tu verdad...</p>
+      <p class="ball-qmsg" id="bqmsg"></p>
+    </div>
+
+    <div class="divider"><span>⭐</span></div>
+
+    <!-- ══ ROTATING MESSAGES ══ -->
+    <div class="reveal-sec">
+      <h3>✨ Mensajes del corazón ✨</h3>
+      <div class="grid" id="cardsGrid"></div>
+      <p class="tap-note">💌 Toca cada carta para descubrirla — ¡cambian cada vez!</p>
+      <button class="btn-reveal" id="btnReveal" onclick="revealAll()">💛 Revelar todos los mensajes 💛</button>
+    </div>
+
+    <!-- FINAL -->
+    <div class="final">
+      <h2>¡Feliz 14 de Febrero, Naomi! 🎉</h2>
+      <p>
+        Que este día tan dulce te recuerde<br>
+        lo hermosa, valiosa e irrepetible que eres. 💛<br><br>
+        El mundo es muchísimo mejor contigo en él. 🌍✨<br>
+        ¡Que este San Valentín sea tan especial<br>como tú lo eres siempre! 🍯🌸
+      </p>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="sig">
+      <div class="label">Con todo el cariño del mundo</div>
+      <span class="name">Jesús Juárez</span>
+      <div class="sub">— Tu loco favorito 🐾💛</div>
+      <span class="heart-sig">💛</span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ════ ALL MESSAGES POOL (16 mensajes, rota aleatoriamente) ════
+const POOL = [
+  { ico:"💫", hint:"¿Cómo eres?",         msg:"✨ Eres brillante como la estrella más bonita del cielo. Naomi, tú tienes luz propia." },
+  { ico:"🌸", hint:"Tu sonrisa...",        msg:"🌸 Tu sonrisa ilumina cualquier lugar. No tienes idea de lo bonita que eres cuando sonríes." },
+  { ico:"🍀", hint:"Qué suerte...",        msg:"🍀 Quien te tiene en su vida es de las personas más afortunadas del mundo. Sin dudarlo." },
+  { ico:"🌈", hint:"Tu magia...",          msg:"🌈 Tienes una magia especial que muy pocos tienen. Eres única, Naomi. De las que nunca se olvidan." },
+  { ico:"💛", hint:"Lo que transmites...", msg:"💛 Donde tú estás, todo se siente más cálido. Tienes el don de hacer felices a los demás." },
+  { ico:"🌺", hint:"Tu belleza...",        msg:"🌺 Eres hermosa por dentro y por fuera. Una persona así merece todo lo bueno del mundo." },
+  { ico:"🦋", hint:"Tus alas...",          msg:"🦋 Tienes la fuerza y la gracia de una mariposa. Naomi, tú puedes con todo lo que te propones." },
+  { ico:"🌙", hint:"Eres especial...",     msg:"🌙 Hay algo en ti que no se puede describir con palabras. Simplemente eres especial, Naomi." },
+  { ico:"🎀", hint:"Un regalo...",         msg:"🎀 Conocerte es un regalo. Quien te tiene cerca debe sentirse el más afortunado del mundo." },
+  { ico:"☀️", hint:"Tu energía...",        msg:"☀️ Tu energía es contagiosa y poderosa. Cada día es mejor cuando tú apareces en él." },
+  { ico:"💎", hint:"Tu valor...",          msg:"💎 Vales más de lo que crees, Naomi. Eres un diamante, aunque a veces no te lo cuenten." },
+  { ico:"🫶", hint:"Tu corazón...",        msg:"🫶 Tienes un corazón enorme. La gente que te importa tiene una suerte increíble de tenerte." },
+  { ico:"🌻", hint:"Como girasol...",      msg:"🌻 Como los girasoles, siempre encuentras la luz. Eso es lo que hace que brilles tanto." },
+  { ico:"🎵", hint:"Tu vibra...",          msg:"🎵 Tienes una vibra que no cualquiera tiene. Alegras hasta el día más gris con tu presencia." },
+  { ico:"🌟", hint:"Tu esencia...",        msg:"🌟 Tu esencia es pura y genuina. En un mundo complicado, tú eres una bocanada de aire fresco." },
+  { ico:"🍓", hint:"Eres dulce...",        msg:"🍓 Eres más dulce de lo que imaginas. Tu manera de ser enamora a todos los que te conocen." },
+];
+
+// Shuffle truly randomly every load
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const chosen = shuffle(POOL).slice(0, 6);
+const CARD_COLORS = ['c1','c2','c3','c4','c1','c2'];
+
+function buildCards() {
+  const grid = document.getElementById('cardsGrid');
+  grid.innerHTML = '';
+  chosen.forEach((m, i) => {
+    const div = document.createElement('div');
+    div.className = 'mcard ' + CARD_COLORS[i];
+    div.onclick = () => revealCard(div);
+    div.innerHTML = `
+      <div class="front">
+        <span class="ico">${m.ico}</span>
+        <span class="hint">${m.hint}</span>
+      </div>
+      <div class="back">${m.msg}</div>`;
+    grid.appendChild(div);
+  });
+}
+buildCards();
+
+function revealCard(card) {
+  if (!card.classList.contains('open')) {
+    card.classList.add('open');
+    burst(5);
+  }
+}
+
+function revealAll() {
+  document.querySelectorAll('.mcard:not(.open)').forEach((c, i) => {
+    setTimeout(() => c.classList.add('open'), i * 180);
+  });
+  setTimeout(() => burst(22), 400);
+  const btn = document.getElementById('btnReveal');
+  btn.textContent = '💛 ¡Todos los mensajes revelados! 💛';
+  btn.disabled = true;
+}
+
+// ════ ORACLE MAGIC BALL ════
+const ORACLE_ANS = [
+  { sym:"💛", txt:"Eres hermosa sin esfuerzo" },
+  { sym:"⭐", txt:"Irradias una luz única" },
+  { sym:"🌸", txt:"Siempre serás especial, Naomi" },
+  { sym:"💎", txt:"Vales muchísimo, de verdad" },
+  { sym:"🌈", txt:"Tu magia es completamente real" },
+  { sym:"🍀", txt:"Eres afortunada y traes suerte" },
+  { sym:"🫶", txt:"Tu corazón es de oro puro" },
+  { sym:"🌟", txt:"Brillas más de lo que crees" },
+  { sym:"🦋", txt:"Puedes con todo y más" },
+  { sym:"☀️", txt:"Eres el sol de alguien especial" },
+  { sym:"💫", txt:"Naomi, eres única en el mundo" },
+  { sym:"🌺", txt:"Tu belleza va mucho por dentro" },
+  { sym:"🎀", txt:"Mereces todo lo bueno del mundo" },
+  { sym:"🌙", txt:"Eres irrepetible e invaluable" },
+];
+
+const PROMPTS = [
+  "¿Soy suficiente?","¿Soy hermosa?","¿Seré feliz?",
+  "¿Me quieren?","¿Soy especial?","¿Tengo valor?",
+  "¿Brillo?","¿Todo saldrá bien?","¿Soy única?",
+  "¿Soy bonita?","¿Me merezco lo mejor?","¿Soy importante?"
+];
+let pIdx = 0;
+
+const BALL_HINTS = [
+  "✨ Toca la bola y descubre tu verdad...",
+  "💬 Pregúntale: ¿Soy hermosa? ¡Tócala!",
+  "🔮 La bola nunca miente sobre Naomi...",
+  "💛 ¡Vuelve a tocarla para otra respuesta!",
+  "🌟 Cada respuesta es solo para ti..."
+];
+let hIdx = 0;
+setInterval(() => {
+  hIdx = (hIdx + 1) % BALL_HINTS.length;
+  const el = document.getElementById('bhint');
+  if (el) el.textContent = BALL_HINTS[hIdx];
+}, 3500);
+
+function askOracle() {
+  const ball = document.getElementById('oball');
+  const osym = document.getElementById('osym');
+  const oans = document.getElementById('oans');
+  const bqmsg = document.getElementById('bqmsg');
+  if (ball.classList.contains('shaking')) return;
+
+  const q = PROMPTS[pIdx % PROMPTS.length];
+  pIdx++;
+  bqmsg.textContent = '"' + q + '"';
+
+  ball.classList.add('shaking');
+  osym.textContent = '...';
+  oans.classList.remove('show');
+  oans.style.display = 'none';
+
+  setTimeout(() => {
+    ball.classList.remove('shaking');
+    const ans = ORACLE_ANS[Math.floor(Math.random() * ORACLE_ANS.length)];
+    osym.textContent = ans.sym;
+    oans.textContent = ans.txt;
+    oans.style.display = 'block';
+    setTimeout(() => oans.classList.add('show'), 50);
+    burst(8);
+  }, 700);
+}
+
+// ════ CONFETTI ════
+const CONF_COLORS = ['#FF4D6D','#FFD93D','#FFBE0B','#FF8FA3','#AEE6FF','#C8F7C5','#FFB3C6','#FFF0F3'];
+function burst(n) {
+  for (let i = 0; i < n; i++) {
+    setTimeout(() => {
+      const c = document.createElement('div');
+      c.className = 'conf';
+      c.style.left = (15 + Math.random() * 70) + 'vw';
+      c.style.background = CONF_COLORS[Math.floor(Math.random() * CONF_COLORS.length)];
+      c.style.width = (7 + Math.random() * 8) + 'px';
+      c.style.height = (7 + Math.random() * 8) + 'px';
+      c.style.borderRadius = Math.random() > .5 ? '50%' : '2px';
+      c.style.animationDuration = (2.2 + Math.random() * 2) + 's';
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 4200);
+    }, i * 70);
+  }
+}
+
+// ════ FLOATIES ════
+const bg = document.getElementById('bg');
+const FLOATIES = ['❤️','💛','🤍','💕','🌸','⭐','✨','🐾','💗','🌼','🍀'];
+function addFloat() {
+  const f = document.createElement('div');
+  f.className = 'floatie';
+  f.textContent = FLOATIES[Math.floor(Math.random() * FLOATIES.length)];
+  f.style.left = Math.random() * 100 + 'vw';
+  f.style.fontSize = (.9 + Math.random() * 1.3) + 'rem';
+  const dur = 7 + Math.random() * 9;
+  f.style.animationDuration = dur + 's';
+  f.style.animationDelay = Math.random() * 2 + 's';
+  bg.appendChild(f);
+  setTimeout(() => f.remove(), (dur + 3) * 1000);
+}
+setInterval(addFloat, 650);
+for (let i = 0; i < 10; i++) setTimeout(addFloat, i * 150);
+
+// Initial confetti
+setTimeout(() => burst(14), 700);
+setTimeout(() => burst(10), 1600);
+</script>
+</body>
+</html>
